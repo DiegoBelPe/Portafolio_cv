@@ -142,10 +142,48 @@ p{
   background-color: var(--first-alpha-color);
 }
 
+@media screen and (min-width: 1024px){
+  .menu-btn{
+    display: none;
+  }
+
+  .menu{
+    position: static;
+    width: auto;
+    flex-direction: row;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menu a{
+    padding: 0 1rem;
+  }
+
+  .menu a:last-child{
+    padding-right: 0;
+  }
+
+  .menu a:hover{
+    background-color: transparent;
+  }
+}
+
 
 /***************Utilities***************************/
 .boxshadow-1{
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.btn{
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  background-color: var(--first-color);
+  display: inline-block;
+  text-decoration: none;
+  color: var(--white-color);
+  font-weight: bold;
 }
 
 .container{
@@ -183,4 +221,18 @@ p{
   font-weight: bold;
   font-size: 2rem;
   text-decoration: none;
+}
+
+@media screen and (min-width: 768px){
+
+}
+
+@media screen and (min-width: 1024px){
+  .header{
+    position: sticky;
+    top: 0;
+    padding: 0.5rem;
+    height: calc(var(--header-height) - 0.5rem);
+  }
+
 }
