@@ -98,8 +98,48 @@ p{
 /***************Components**********************/
 
 /***************Menu*****************************/
+.menu-btn{
+  outline: thin solid var(--first-color);
+  border: 0;
+  cursor: pointer;
+  background-color: var(--second-color);
+}
+
+.menu-btn svg{
+  fill: var(--first-color);
+}
+
 .menu{
-  display: none;
+  position: fixed;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  bottom: var(--header-height);
+  width: 100%;
+  opacity: 0;
+  pointer-events: none ;
+  transition: opacity 0.5s ease;
+  background-color: var(--second-color);
+}
+
+.menu.is-active{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu a {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--first-color);
+  
+}
+
+.menu a:hover{
+  color: var(--white-color);
+  background-color: var(--first-alpha-color);
 }
 
 
