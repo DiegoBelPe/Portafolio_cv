@@ -204,7 +204,7 @@ progress::-webkit-progress-bar{
   background-color: var(--gray-color);
 }
 progress::-webkit-progress-value{
-  background-color: var(--gray-dark-color);
+  background-color: var(--first-color);
 }
 progress::-moz-progress-value{
   background-color: var(--gray-dark-color);
@@ -245,7 +245,10 @@ progress::-moz-progress-value{
 }
 
 .gray-scale{
-  filter: grayscale(1);
+  /* filter: grayscale(-1); */
+  border-radius: 2rem;
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.50);
+ 
 }
 .none{
   display: none;
@@ -255,6 +258,9 @@ progress::-moz-progress-value{
   text-align: center;
 }
 
+.section{
+  padding: 2rem 1rem;
+}
 .text-left{
   text-align: left;
 }
@@ -264,6 +270,11 @@ progress::-moz-progress-value{
 }
 
 @media screen and (min-width: 1024px){
+
+  .full-lg-screen{
+    width: 100%;
+    min-height: 100vh;
+  }
   .text-lg-center{
   text-align: center;
 }
@@ -278,6 +289,9 @@ progress::-moz-progress-value{
 }
 /***************Site Style******************************/
 
+.about > article{
+  margin-bottom: 2rem;
+}
 .header{
   position: fixed;
   left: 0;
@@ -308,6 +322,13 @@ progress::-moz-progress-value{
 }
 
 @media screen and (min-width: 1024px){
+
+  .about{
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: space-between;
+    align-content: center;
+  }
   .header{
     position: sticky;
     top: 0;
