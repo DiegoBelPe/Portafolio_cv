@@ -222,6 +222,11 @@ progress::-moz-progress-value{
 }
 
 /***************Utilities***************************/
+
+.bg-gray-light{
+  background-color: var(--gray-light-color);
+
+}
 .boxshadow-1{
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
 }
@@ -260,6 +265,16 @@ progress::-moz-progress-value{
 
 .section{
   padding: 2rem 1rem;
+}
+
+.section-title{
+  border-top: thin solid var(--first-color);
+  border-bottom: thin solid var(--first-color);
+  width: 250px;
+  margin: 2rem auto;
+  padding: .5rem 1rem;
+  text-align: center;
+  color: var(--title-color);
 }
 .text-left{
   text-align: left;
@@ -317,7 +332,31 @@ progress::-moz-progress-value{
   text-decoration: none;
 }
 
+.service-card{
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.service-card svg{
+  margin-bottom: 1.25rem;
+  fill: var(--first-color);
+}
+
+.service-card h3{
+color: var(--title-color);
+}
 @media screen and (min-width: 768px){
+  .services > .container{
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .services .section-title{
+    grid-column: span 2;
+  }
 
 }
 
@@ -335,5 +374,21 @@ progress::-moz-progress-value{
     padding: 0.5rem;
     height: calc(var(--header-height) - 0.5rem);
   }
+
+   .services > .container{
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .services .section-title{
+    grid-column: span 3;
+  }
+
+  .services .card-lg-hosting{
+    grid-column: span 3;
+  }
+
 
 }
