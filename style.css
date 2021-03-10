@@ -193,6 +193,46 @@ p{
     background-color: transparent;
   }
 }
+
+/***************Modal***************************/
+.modal{
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  background-color: var(--black-alpha-color);
+  align-items: center;
+  opacity: 0;
+ pointer-events: none;
+  transition: all 1s;
+}
+
+.modal-content{
+  position: relative;
+}
+
+.modal-close{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.modal-close svg{
+width: 3rem;
+height: 3rem;
+fill: var(--first-color);
+}
+
+.modal[id|="trabajo"]:target{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
 /***************ProgressBar***************************/
 progress{
   width: 100%;
@@ -332,10 +372,51 @@ progress::-moz-progress-value{
   text-decoration: none;
 }
 
+.portfolio-card{
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.portfolio-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-card-info{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--first-alpha-color);
+  color: var(--white-color);
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.portfolio-card:hover .portfolio-card-info{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.portfolio-card-info > div{
+  padding: 1rem;
+  border: thin solid var(--white-color);
+}
+
+.portfolio-modal
+
 .service-card{
   margin: 1rem auto;
   padding: 1rem;
   text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
 .service-card svg{
@@ -347,6 +428,15 @@ progress::-moz-progress-value{
 color: var(--title-color);
 }
 @media screen and (min-width: 768px){
+
+  .portfolio > .container{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .portfolio .section-title{
+    grid-column: span 2;
+  }
   .services > .container{
     display: grid;
     grid-template-columns: repeat(2, 45%);
@@ -368,11 +458,22 @@ color: var(--title-color);
     justify-content: space-between;
     align-content: center;
   }
+
+
   .header{
     position: sticky;
     top: 0;
     padding: 0.5rem;
     height: calc(var(--header-height) - 0.5rem);
+  }
+
+  .portfolio > .container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+  }
+
+  .portfolio .section-title{
+    grid-column: span 3;
   }
 
    .services > .container{
