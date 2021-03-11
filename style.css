@@ -409,7 +409,32 @@ progress::-moz-progress-value{
   border: thin solid var(--white-color);
 }
 
-.portfolio-modal
+.portfolio-modal{
+  background-color: var(--white-color);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+
+}
+
+.portfolio-modal h3{
+  padding: 0.5rem 0;
+  margin: 1rem auto;
+  border-bottom: medium solid var(--first-color);
+  color: var(--title-color);
+}
+
+.portfolio-details{
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-auto-rows: 2rem;
+  
+}
+
+.portfolio-details b{
+  color: var(--first-color);
+}
 
 .service-card{
   margin: 1rem auto;
@@ -437,6 +462,16 @@ color: var(--title-color);
   .portfolio .section-title{
     grid-column: span 2;
   }
+
+  .portfolio-modal{
+    flex-direction: row;
+    max-width: 800px;
+}
+
+.portfolio-info{
+  margin-left: 1rem;
+  align-self: center;
+}
   .services > .container{
     display: grid;
     grid-template-columns: repeat(2, 45%);
